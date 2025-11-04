@@ -49,6 +49,7 @@ class F5TTSCreate:
     vocoder_types = ["auto", "vocos", "bigvgan"]
     tooltip_seed = "Seed. -1 = random"
     tooltip_speed = "Speed. >1.0 slower. <1.0 faster"
+    tooltip_audio = "5-15 seconds of audio"
 
     def get_model_names():
         model_names = F5TTSCreate.model_names[:]
@@ -510,7 +511,9 @@ class F5TTSAudioInputs:
         model_types = F5TTSCreate.get_configs()
         return {
             "required": {
-                "sample_audio": ("AUDIO",),
+                "sample_audio": ("AUDIO",{
+                    "tooltip": F5TTSCreate.tooltip_audio,
+                }),
                 "sample_text": ("STRING", {"default": "Text of sample_audio"}),
                 "speech": ("STRING", {
                     "multiline": True,
@@ -745,7 +748,10 @@ class F5TTSAudioAdvanced:
 
         return {
             "required": {
-                "sample": (filesWithTxt, {"audio_upload": True}),
+                "sample": (filesWithTxt, {
+                    "audio_upload": True,
+                    "tooltip": F5TTSCreate.tooltip_audio,
+                }),
                 "speech": ("STRING", {
                     "multiline": True,
                     "default": "This is what I want to say"
