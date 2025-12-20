@@ -6,6 +6,8 @@ Using F5-TTS https://github.com/SWivid/F5-TTS
 
 ### Instructions
 
+* Install [ffmpeg-full-shared](https://ffmpeg.org/download.html).  If you are using conda, use `conda install ffmpeg`
+
 * Put in ComfyUI's `input` folder a .wav file of an audio of the voice you'd like to use, remove any background music, noise.
 * And a .txt file of the same name with what was said.
 * Press refresh to see it in the node
@@ -95,7 +97,6 @@ so it's becomes...
 ### Tips...
 
  * F5-TTS [cuts your voice sample off at 15 secs](https://github.com/SWivid/F5-TTS/blob/8898d05e374bcb8d3fc0b1286037e95df61f491f/src/f5_tts/infer/utils_infer.py#L315).   It may cut off in the middle of a word and not cut the text only audio.   Make sure your input samples are less than 15 secs.
- * If you're using the ComfyUI-Whisper node you will also need to install [ffmpeg](https://ffmpeg.org/download.html)
 
 
 ### Install from git
