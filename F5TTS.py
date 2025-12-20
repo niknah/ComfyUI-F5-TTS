@@ -470,12 +470,26 @@ class F5TTSCreate:
         for (batch_number, waveform) in enumerate(
             sample_audio["waveform"].cpu()
         ):
-            buff = io.BytesIO()
-            torchaudio.save(
-                buff, waveform, sample_audio["sample_rate"], format="WAV"
+            # buff = io.BytesIO()
+            try:
+                torchaudio.save(
+                    wave_file_name, waveform, sample_audio["sample_rate"], format="WAV"
+                    )
+                # with open(wave_file_name, 'wb') as f:
+                #    f.write(buff.getbuffer())
+            except Exception as e:
+                print("Might be torch 2.9, torchaudio.save did not work")
+                # print(e)
+                from torchcodec.encoders import AudioEncoder
+                encoder = AudioEncoder(
+                    waveform,
+                    sample_rate=sample_audio["sample_rate"]
                 )
-            with open(wave_file_name, 'wb') as f:
-                f.write(buff.getbuffer())
+                encoder.to_file_like(
+                    wave_file_name,
+                    format="wav",  # or "mp3", "ogg", "flac"
+                )
+
             hasAudio = True
             break
         if not hasAudio:
