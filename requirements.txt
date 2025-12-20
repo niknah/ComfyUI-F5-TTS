@@ -5,7 +5,7 @@ click
 datasets
 ema_pytorch>=0.5.2
 gradio
-jieba
+rjieba
 librosa
 matplotlib
 numpy
@@ -24,3 +24,4 @@ pygit2
 omegaconf
 audiostretchy
 torch-time-stretch
+torchcodec
