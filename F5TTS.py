@@ -10,7 +10,7 @@ import tempfile
 import sys
 import numpy as np
 import re
-import io
+# import io
 from omegaconf import OmegaConf
 from comfy.utils import ProgressBar
 import comfy
@@ -479,6 +479,7 @@ class F5TTSCreate:
                 #    f.write(buff.getbuffer())
             except Exception as e:
                 print("Might be torch 2.9, torchaudio.save did not work")
+                print(e)
                 # print(e)
                 from torchcodec.encoders import AudioEncoder
                 encoder = AudioEncoder(
