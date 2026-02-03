@@ -1,7 +1,7 @@
 [project]
 name = "comfyui-f5-tts"
 description = "Text to speech with F5-TTS"
-version = "1.0.25"
+version = "1.0.26"
 license = {text = "MIT License"}
 
 [project.urls]
