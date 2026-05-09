@@ -24,4 +24,4 @@ pygit2
 omegaconf
 audiostretchy
 torch-time-stretch
-torchcodec
+torchcodec>=0.10,<0.11
