@@ -478,6 +478,8 @@ class F5TTSCreate:
                 # with open(wave_file_name, 'wb') as f:
                 #    f.write(buff.getbuffer())
             except Exception as e:
+                # https://docs.pytorch.org/audio/stable/generated/torchaudio.save.html
+                # As of TorchAudio 2.9, this function relies on TorchCodec’s encoding capabilities under the hood. It is provided for convenience, but we do recommend that you port your code to natively use torchcodec’s AudioEncoder class for better performance:
                 print("Might be torch 2.9, torchaudio.save did not work")
                 print(e)
                 # print(e)
@@ -486,10 +488,11 @@ class F5TTSCreate:
                     waveform,
                     sample_rate=sample_audio["sample_rate"]
                 )
-                encoder.to_file_like(
-                    wave_file_name,
-                    format="wav",  # or "mp3", "ogg", "flac"
-                )
+                with open(wave_file_name, 'wb') as f:
+                    encoder.to_file_like(
+                        f,
+                        format="wav",  # or "mp3", "ogg", "flac"
+                    )
 
             hasAudio = True
             break
