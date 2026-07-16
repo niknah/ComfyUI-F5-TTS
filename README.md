@@ -6,7 +6,7 @@ Using F5-TTS https://github.com/SWivid/F5-TTS
 
 ### Instructions
 
-* Install [ffmpeg-full-shared](https://ffmpeg.org/download.html).  If you are using conda, use `conda install ffmpeg`
+* In windows install ffmpeg shared library version with `winget "ffmpeg (Shared)"
 
 * Put in ComfyUI's `input` folder a .wav file of an audio of the voice you'd like to use, remove any background music, noise.
 * And a .txt file of the same name with what was said.
