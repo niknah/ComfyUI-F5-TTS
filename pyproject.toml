@@ -11,4 +11,4 @@ Repository = "https://github.com/niknah/ComfyUI-F5-TTS"
 [tool.comfy]
 PublisherId = "niknah"
 DisplayName = "ComfyUI F5-TTS"
-Icon = ""
+Icon = "https://raw.githubusercontent.com/niknah/ComfyUI-F5-TTS/refs/heads/main/F5TTS_Icon.webp"
