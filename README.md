@@ -122,6 +122,7 @@ git clone https://github.com/SWivid/F5-TTS.git F5-TTS
 
 ### Changes
 
+* 1.0.28: Fixed audiostretchy error
 * 1.0.27: Added Load model, Audio from model nodes to let ComfyUI manage the model memory(doesn't take up much memory anyways).  Fix speed change with TDHS
 * 1.0.23: Made F5-TTSv1 the default model.
 * 1.0.22: Added TDHS(Time-domain harmonic scaling) to advanced node.

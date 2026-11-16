@@ -441,7 +441,7 @@ class F5TTSCreate:
         )
 
     def time_shift_audiostretchy(self, audio, speed):
-        from audiostretchy.stretch import AudioStretch
+        from audiostretchy import AudioStretch
         from torchcodec.encoders import AudioEncoder
 
         rate = audio['sample_rate']
